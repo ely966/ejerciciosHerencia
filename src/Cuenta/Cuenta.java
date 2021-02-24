@@ -1,55 +1,59 @@
-package Cuenta;
+package Cuentas;
 
 public class Cuenta {
-	
 	private double saldo;
 	private String numCuenta;
 	final static String msg1 = "Imposible cantidad negativa";
 	final static String msg2 = "Saldo insuficiente";
 	
-	
-	public Cuenta( String numCuenta,double saldo) throws Exception {
+	public Cuenta (String numCuenta,double saldo) throws Exception {
 		super();
-		if (saldo <0) { throw new Exception (msg1);}
+		if (saldo <0) {throw new Exception (msg1);}
 		this.saldo = saldo;
 		this.numCuenta = numCuenta;
 	}
-	
-	public Cuenta( String numCuenta) {
+	public Cuenta(String numCuenta) {
 		super();
-		this.saldo = 0;
+		this.saldo=0;
 		this.numCuenta = numCuenta;
+		
 	}
-
+	
 	public double getSaldo() {
 		return saldo;
 	}
 	
-	
-
-	protected void setSaldo(double saldo) {
-		this.saldo = saldo;
+	protected void setSaldo (double saldo) {
+		this.saldo=saldo;
 	}
-
+	
 	public String getNumCuenta() {
 		return numCuenta;
 	}
 	
-	public void ingreso(double cant) throws Exception{
-		if (cant < 0 ) { throw new Exception (msg1);}
-		
-		this.saldo += cant;
-		
+	public void ingreso(double cant )throws Exception {
+		if (cant <0) {throw new Exception (msg2);
+	}
+		this.saldo +=cant;
 	}
 	
-	public void reintegro(double cant) throws Exception {
-		if (cant <= this.saldo && cant >0) {
+	public void reintegro (double cant) throws Exception {
+		if (cant <= this.saldo && cant > 0) {
 			this.saldo-=cant;
+			
 		}else {
 			throw new Exception (msg2);
 		}
-		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public String toString() {
@@ -83,9 +87,4 @@ public class Cuenta {
 	
 	
 	
-	
-	
-	
-	
-
 }

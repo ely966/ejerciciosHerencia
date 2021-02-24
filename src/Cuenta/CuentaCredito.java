@@ -1,11 +1,7 @@
-package Cuenta;
+package Cuentas;
 
 public class CuentaCredito extends Cuenta {
 
-	
-	
-	
-	
 	private double credito;
 	private static final double CREDITODEFECTO = 100;
 	private static final double CREDITOMAX=300;
@@ -33,7 +29,9 @@ public class CuentaCredito extends Cuenta {
 		this.credito= CREDITODEFECTO;
 		
 	}
-
+	
+	
+	
 	public double getCredito() {
 		return credito;
 	}
@@ -64,6 +62,7 @@ public class CuentaCredito extends Cuenta {
 		
 		return super.toString() +  " credito diponible: " + creditoDisponible;
 	}
+	
 	
 	
 	
