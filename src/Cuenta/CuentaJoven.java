@@ -19,7 +19,16 @@ public class CuentaJoven extends Cuenta {
 		this.titular = titular;
 		this.fechanacimiento = fechanacimiento;
 	}
-
+	
+//	public CuentaJoven (String titular, LocalDate fechanacimiento) {
+//		//super();
+//		this.titular = titular;
+//		this.fechanacimiento = fechanacimiento;
+//	}
+	
+	
+	
+	
 	public String getTitular() {
 		return titular;
 	}
@@ -37,7 +46,8 @@ public class CuentaJoven extends Cuenta {
 	}
 
 	public static double getBonificacion() {
-		return bonificacion;
+		double bonificacion2=super.getSaldo()*bonificacion;
+		return bonificacion2;
 	}
 
 	public CuentaJoven(String numCuenta, LocalDate fechanacimiento, String titular) throws Exception {
@@ -53,7 +63,7 @@ public class CuentaJoven extends Cuenta {
 		LocalDate hoy = LocalDate.now();
 		long edad= ChronoUnit.YEARS.between(fechanacimiento, hoy);
 		
-		if (edad > 18 && edad < 25) {
+		if (edad >= 18 && edad <= 25) {
 		//getFechaNacimiento().isAfter(fecha)
 			return true;
 		}else
@@ -68,6 +78,7 @@ public class CuentaJoven extends Cuenta {
 			double resto;
 			resto= super.getSaldo();
 			resto-=cantidad;
+			saldo= resto;
 		} else {
 			throw new Exception ("El titular no es valido, pr lo tango no puede sacar dinero ");
 		}
