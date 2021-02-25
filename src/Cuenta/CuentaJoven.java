@@ -45,7 +45,7 @@ public class CuentaJoven extends Cuenta {
 		this.fechanacimiento = fechanacimiento;
 	}
 
-	public static double getBonificacion() {
+	public double getBonificacion() {
 		double bonificacion2=super.getSaldo()*bonificacion;
 		return bonificacion2;
 	}
@@ -89,7 +89,7 @@ public class CuentaJoven extends Cuenta {
 	
 	@Override
 	public String toString() {
-		return "CuentaJoven [titular=" + titular + ", fechanacimiento=" + fechanacimiento + "]";
+		return "CuentaJoven [titular=" + titular + ", fechanacimiento=" + fechanacimiento + "con saldo  : " + super.getSaldo() + "con la bonificacion de " + getBonificacion() +"]";
 	}
 	
 	
