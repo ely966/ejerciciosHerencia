@@ -1,7 +1,7 @@
 package Cuentas;
 
 public class Cuenta {
-	private double saldo;
+	protected double saldo;
 	private String numCuenta;
 	final static String msg1 = "Imposible cantidad negativa";
 	final static String msg2 = "Saldo insuficiente";

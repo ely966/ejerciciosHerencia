@@ -48,7 +48,7 @@ import Cuentas.CuentaJoven;
 					c3.reintegro(cant);
 					System.out.println("Tu saldo es ahora " + c3.getSaldo() );
 					
-					
+					System.out.println(c3.toString());
 					
 				}else {
 					System.out.println("Edad insuficiente");
