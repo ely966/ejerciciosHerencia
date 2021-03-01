@@ -5,16 +5,38 @@ import java.time.LocalDate;
 public class Barco {
 	protected String matricula;
 	protected double eslora;
-	protected LocalDate anofabricacion;
+	protected int anofabricacion;
 	protected double valor =20.0;
+	protected int valorfijo =10;
 	
-	
-	public Barco(String matricula, double eslora, LocalDate anofabricacion, double valor) {
+	public Barco(String matricula, double eslora, int anofabricacion) {
 		super();
 		this.matricula = matricula;
 		this.eslora = eslora;
 		this.anofabricacion = anofabricacion;
-		this.valor = valor * eslora;
+		
+	}
+
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+
+	public double getEslora() {
+		eslora=eslora*valorfijo;
+		return eslora;
+	}
+
+
+	public int getAnofabricacion() {
+		return anofabricacion;
+	}
+
+
+	public double getValor() {
+		valor=valor*eslora;
+		return valor;
 	}
 
 
