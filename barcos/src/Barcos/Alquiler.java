@@ -9,7 +9,7 @@ public class Alquiler extends Barco{
 	private LocalDate fechainicial; 
 	private LocalDate fechafinal;
 	private int posicionAmarrre;
-	
+	private Barco barcoo;
 	
 	public Alquiler(String nombre, String dni, LocalDate fechainicial, LocalDate fechafinal, int posicionAmarrre) {
 		super(valor,valorfijo);
