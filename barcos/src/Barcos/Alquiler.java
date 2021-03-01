@@ -2,7 +2,7 @@ package Barcos;
 
 import java.time.LocalDate;
 
-public class Alquiler {
+public class Alquiler extends Barco{
 	private String nombre;
 	private String dni;
 	private LocalDate fechainicial; 
@@ -11,7 +11,7 @@ public class Alquiler {
 	
 	
 	public Alquiler(String nombre, String dni, LocalDate fechainicial, LocalDate fechafinal, int posicionAmarrre) {
-		super();
+		super(valor,valorfijo);
 		this.nombre = nombre;
 		this.dni = dni;
 		this.fechainicial = fechainicial;
@@ -20,8 +20,10 @@ public class Alquiler {
 	}
 
 
-	public Alquiler() {
-		super();
+	public double Alquilerbarco(double eslora) {
+		double resultado= valor* eslora;
+		resultado=resultado+valorfijo;
+		return resultado;
 	}
 
 
@@ -49,6 +51,9 @@ public class Alquiler {
 		return posicionAmarrre;
 	}
 
+	
+	
+	
 
 	@Override
 	public int hashCode() {

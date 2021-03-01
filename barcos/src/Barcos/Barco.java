@@ -6,8 +6,8 @@ public class Barco {
 	protected String matricula;
 	protected double eslora;
 	protected int anofabricacion;
-	protected double valor =20.0;
-	protected int valorfijo =10;
+	protected static final double valor =20.0;
+	protected static final int valorfijo =10;
 	
 	public Barco(String matricula, double eslora, int anofabricacion) {
 		super();
@@ -18,14 +18,19 @@ public class Barco {
 	}
 
 
+	public Barco(double valor2, int valorfijo2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getMatricula() {
 		return matricula;
 	}
 
 
 	public double getEslora() {
-		eslora=eslora*valorfijo;
-		return eslora;
+		double resultado=eslora*valorfijo;
+		return resultado;
 	}
 
 
@@ -35,8 +40,8 @@ public class Barco {
 
 
 	public double getValor() {
-		valor=valor*eslora;
-		return valor;
+		double resultado =valor*eslora;
+		return resultado;
 	}
 
 
