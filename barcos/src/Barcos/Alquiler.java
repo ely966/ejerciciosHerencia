@@ -1,6 +1,7 @@
 package Barcos;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Alquiler extends Barco{
 	private String nombre;
@@ -21,7 +22,9 @@ public class Alquiler extends Barco{
 
 
 	public double Alquilerbarco(double eslora) {
-		double resultado= valor* eslora;
+		
+		long dias = ChronoUnit.DAYS.between(fechainicial, fechafinal);
+		double resultado= (super.valorfijo*super.eslora) * dias ;
 		resultado=resultado+valorfijo;
 		return resultado;
 	}

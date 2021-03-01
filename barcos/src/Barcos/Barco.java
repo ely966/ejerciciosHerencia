@@ -22,15 +22,18 @@ public class Barco {
 		// TODO Auto-generated constructor stub
 	}
 
-
+	public double Calcularalquiler() {
+		double resultadoaql=eslora*valorfijo;
+		return resultadoaql;
+	}
+	
 	public String getMatricula() {
 		return matricula;
 	}
 
 
 	public double getEslora() {
-		double resultado=eslora*valorfijo;
-		return resultado;
+		return eslora;
 	}
 
 
