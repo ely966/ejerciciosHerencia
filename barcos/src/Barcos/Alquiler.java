@@ -3,7 +3,7 @@ package Barcos;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Alquiler extends Barco{
+public class Alquiler{
 	private String nombre;
 	private String dni;
 	private LocalDate fechainicial; 
@@ -11,21 +11,22 @@ public class Alquiler extends Barco{
 	private int posicionAmarrre;
 	private Barco barcoo;
 	
-	public Alquiler(String nombre, String dni, LocalDate fechainicial, LocalDate fechafinal, int posicionAmarrre) {
-		super(valor,valorfijo);
+	public Alquiler(String nombre, String dni, LocalDate fechainicial, LocalDate fechafinal, int posicionAmarrre, Barco barcoo) {
+		//super(valor,valorfijo);
 		this.nombre = nombre;
 		this.dni = dni;
 		this.fechainicial = fechainicial;
 		this.fechafinal = fechafinal;
 		this.posicionAmarrre = posicionAmarrre;
+		this.barcoo = barcoo;
 	}
 
 
 	public double Alquilerbarco(double eslora) {
 		
 		long dias = ChronoUnit.DAYS.between(fechainicial, fechafinal);
-		double resultado= (super.valorfijo*super.eslora) * dias ;
-		resultado=resultado+valorfijo;
+		double resultado= barcoo.Calcularalquiler()* dias ;
+		resultado=resultado+Barco.valor;
 		return resultado;
 	}
 
