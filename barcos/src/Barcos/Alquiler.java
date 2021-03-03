@@ -22,15 +22,15 @@ public class Alquiler{
 	}
 
 
-	public double Alquilerbarco(double eslora) {
-		if (fechafinal.isAfter(fechainicial)) {
-			throw new AlquilerException ("La horafinal debe ser anterior a la hora inicial");
-		}else {
+	public double Alquilerbarco(double eslora) throws BarcoAlquilerException {
+		if (fechafinal.isAfter(fechainicial)) throw new BarcoAlquilerException("Fecha inicial debe ser ante sque la fecha final") ;
+			
+		
 			long dias = ChronoUnit.DAYS.between(fechainicial, fechafinal);
 			double resultado= barcoo.Calcularalquiler()* dias ;
 			resultado=resultado+Barco.valor;
 			return resultado;
-		}
+		
 	}
 
 
