@@ -24,7 +24,10 @@ public class MainBarco {
 		
 		Deportivos d1= new Deportivos ("QWER78",21.0,2003, 50.0);
 		
-		
+		System.out.println(v1);
+		System.out.println(y1);
+		System.out.println(d1);
+		System.out.println();
 		
 		
 		
