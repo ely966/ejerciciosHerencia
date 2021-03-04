@@ -17,7 +17,11 @@ public class Velero extends Barco{
 		this.numMastiles = numMastiles;
 	}
 
-
+	@Override
+	public double calcularAlquiler() {
+		double resultadoaql=super.calcularAlquiler() +numMastiles;
+		return resultadoaql;
+	}
 	public int getNumMastiles() {
 		return numMastiles;
 	}
@@ -25,6 +29,12 @@ public class Velero extends Barco{
 
 	public void setNumMastiles(int numMastiles) {
 		this.numMastiles = numMastiles;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Velero [numMastiles=" + numMastiles + "]";
 	}
 	
 	

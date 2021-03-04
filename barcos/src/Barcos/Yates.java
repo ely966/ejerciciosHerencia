@@ -19,6 +19,11 @@ public Yates (String matricula, double eslora, int anofabricacion, double potenc
 	this.num_camarotes = num_camarotes;
 }
 
+@Override
+public double calcularAlquiler() {
+	double resultadoaql=super.calcularAlquiler() +potenciaCVyates +num_camarotes;
+	return resultadoaql;
+}
 
 public double getPotenciaCVyates() {
 	return potenciaCVyates;

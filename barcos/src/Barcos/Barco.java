@@ -2,7 +2,7 @@ package Barcos;
 
 import java.time.LocalDate;
 
-public class Barco {
+public abstract class Barco {
 	protected String matricula;
 	protected double eslora;
 	protected int anofabricacion;
@@ -22,8 +22,8 @@ public class Barco {
 		// TODO Auto-generated constructor stub
 	}
 
-	public double Calcularalquiler() {
-		double resultadoaql=eslora*valorfijo;
+	public double calcularAlquiler() {
+		double resultadoaql=(eslora*valorfijo) + valor;
 		return resultadoaql;
 	}
 	

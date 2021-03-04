@@ -16,7 +16,12 @@ public class Deportivos extends Barco{
 		this.potenciaCV = potenciaCV;
 	}
 
-
+	@Override
+	public double calcularAlquiler() {
+		double resultadoaql=super.calcularAlquiler() +potenciaCV;
+		return resultadoaql;
+	}
+	
 	public double getPotenciaCV() {
 		return potenciaCV;
 	}
