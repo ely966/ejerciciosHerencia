@@ -42,6 +42,14 @@ public class  EmpleadoTemporal extends Empleado{
 
 
 
+
+	@Override
+	public String toString() {
+		return "EmpleadoTemporal [fechaAlta=" + fechaAlta + ", fechaBaja=" + fechaBaja + "]";
+	}
+
+
+
 	
 	
 	

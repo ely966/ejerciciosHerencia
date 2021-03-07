@@ -77,6 +77,13 @@ public abstract class  Empleado {
 			return false;
 		return true;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Empleado [nombre=" + nombre + ", edad=" + edad + ", nif=" + nif + ", sueldo=" + sueldo + "]";
+	}
 	
 	
 	

@@ -15,6 +15,11 @@ public class EmpleadoPorHoras extends Empleado{
 		double sueldo = precioPorHora * numHoras;
 		return sueldo;
 	}
+
+	@Override
+	public String toString() {
+		return "EmpleadoPorHoras [precioPorHora=" + precioPorHora + ", numHoras=" + numHoras + "]";
+	}
 	
 	
 	

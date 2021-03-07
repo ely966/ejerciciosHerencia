@@ -31,6 +31,11 @@ import java.time.LocalDate;
 		double sueldo = (super.getSueldo() + (tiempoenlaEmpresa * COMPLEMENTARIO));
 		return sueldo;
 	}
+
+	@Override
+	public String toString() {
+		return "EmpleadoFijo [fechaAlta=" + fechaAlta + "]";
+	}
 	
 	
 	
