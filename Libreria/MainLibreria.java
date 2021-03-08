@@ -49,7 +49,17 @@ public class MainLibreria {
 		
 		//comprobar diferencias de dias
 		System.out.println(l1.comprobarDias(l3));
-				
+		
+//		
+		ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40);
+		System.out.println(ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40));
+		
+		System.out.println(ld2.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling",2.0, 11.40));
+		
+		
+		System.out.println(lf1.comprarprecio("Las aventuras de nona", "Felipa Paredes",12.50, "pdf"));
+		
+//		
 
 	
 		
