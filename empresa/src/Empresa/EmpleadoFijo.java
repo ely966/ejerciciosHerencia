@@ -26,7 +26,7 @@ import java.time.LocalDate;
 	}
 	
 	@Override
-	public double calcularSaldo() {
+	public double calcularSalario() {
 		int tiempoenlaEmpresa = LocalDate.now().getYear() -fechaAlta;
 		double sueldo = (super.getSueldo() + (tiempoenlaEmpresa * COMPLEMENTARIO));
 		return sueldo;

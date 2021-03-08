@@ -17,15 +17,6 @@ public abstract class  Empleado {
 		this.sueldo = sueldo;
 	}
 	
-	
-	//este hace falta para el empleado por horas, porque el sueldo normal no le sirv. hayq ue calcular dinero por horaspor las horas
-	public Empleado(String nombre, int edad, String nif) {
-		super();
-		this.nombre = nombre;
-		this.edad = edad;
-		this.nif = nif;
-		
-	}
 
 
 	public double getSueldo() {
@@ -42,7 +33,7 @@ public abstract class  Empleado {
 		return nif;
 	}
 	
-	public double calcularSaldo() throws ExceptionFechaEmpleadosTempo {
+	public double calcularSalario() throws ExceptionFechaEmpleadosTempo {
 		this.sueldo = sueldo;
 		return sueldo;
 	}

@@ -32,7 +32,7 @@ public class  EmpleadoTemporal extends Empleado{
 	
 
 	@Override
-	public double calcularSaldo() throws ExceptionFechaEmpleadosTempo {
+	public double calcularSalario() throws ExceptionFechaEmpleadosTempo {
 		if (fechaBaja.isBefore(fechaAlta))throw new ExceptionFechaEmpleadosTempo("Fecha de alta debe ser antes que la fecha de baja");
 		
 		

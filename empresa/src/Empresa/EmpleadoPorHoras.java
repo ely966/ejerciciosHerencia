@@ -5,13 +5,13 @@ public class EmpleadoPorHoras extends Empleado{
 	private int numHoras;
 	
 	
-	public EmpleadoPorHoras(String nombre, int edad, String nif, double precioPorHora, int numHoras) {
-		super(nombre, edad, nif);
+	public EmpleadoPorHoras(String nombre, int edad, String nif, Double saldo, double precioPorHora, int numHoras) {
+		super(nombre, edad, nif, saldo );
 		this.precioPorHora = precioPorHora;
 		this.numHoras = numHoras;
 	}
 	@Override
-	public double calcularSaldo() {
+	public double calcularSalario() {
 		double sueldo = precioPorHora * numHoras;
 		return sueldo;
 	}
