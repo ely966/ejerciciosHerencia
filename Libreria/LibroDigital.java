@@ -3,34 +3,30 @@ package Libreria;
 import java.time.LocalDate;
 
 public class LibroDigital extends Libro {
-	private double precio;
+	protected double precio;
 	private String formato;
 	
 	
 	
 
 	public LibroDigital(String titulo, String autor, String editorial, double precio,
-			String formato) {
+			String formato) throws Excepcionformatodigital {
 		super(titulo, autor, editorial);
 		this.precio = precio;
+		
 		this.formato = formato;
-	}
+		if (formato.equals ("epub")) throw  new Excepcionformatodigital("Formato no valido");	
 
+		
+	}
 	public LibroDigital(String titulo, String autor, double precio,
 			String formato) {
 		super(titulo, autor);
 		this.precio = precio;
 		this.formato = formato;
 	}
-	
-//	public Boolean compararprecio (String titulo, String autor, String editorial, LocalDate fechaedicion, double peso,double preciofisico) {
-//		if (precio > preciofisico) {
-//			return true;
-//		}else {
-//			return false;
-//		}
-//	
-//	}
+	//throws Excepcionformatodigital
+
 
 	public Boolean comprobar() throws Excepcionformatodigital {
 		if (formato != "epub" && formato != "mobi" && formato != "pdf") throw  new Excepcionformatodigital("Formato no valido");	
@@ -41,7 +37,7 @@ public class LibroDigital extends Libro {
 		return precio;
 	}
 
-	public String getFormato() throws Excepcionformatodigital {
+	public String getFormato() {
 		
 		return formato;
 	}
@@ -49,7 +45,7 @@ public class LibroDigital extends Libro {
 
 	@Override
 	public String toString() {
-		return "Libro:" + super.getTitulo() + "Autor" + super.getAutor() + "ISBN" + super.getIsbn() + "Codigo : " + super.getCodigo() + "precio :" + precio + " formato:" + formato + "]";
+		return super.toString() + "precio : " + precio + " formato: " + formato + "]";
 	}
 
 	public boolean comprarprecio(String string, String string2, double d, double e) {
@@ -57,6 +53,17 @@ public class LibroDigital extends Libro {
 			return true;
 		}else {
 			return false;
+		}
+		
+	}
+	
+	//Comparar el precio de un libro digital y el de un libro fisico
+	public Boolean  compararprecio(LibroFisico lf1) {
+		
+		if (precio > lf1.precio) {
+			return false;
+		}else {
+			return true;
 		}
 		
 	}

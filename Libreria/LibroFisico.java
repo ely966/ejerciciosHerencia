@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class LibroFisico extends Libro {
 	private double peso;
-	private double precio;
+	protected double precio;
 	
 	
 	public LibroFisico(String titulo, String autor, String editorial, double peso,
@@ -29,7 +29,16 @@ public class LibroFisico extends Libro {
 		return precio;
 	}
 	
-
+	//Comparar el precio de un libro digital y el de un libro fisico
+		public Boolean  compararprecio(LibroDigital ld1) {
+			
+			if (precio > ld1.precio) {
+				return false;
+			}else {
+				return true;
+			}
+			
+		}
 	
 	
 	
@@ -45,6 +54,8 @@ public class LibroFisico extends Libro {
 			return false;
 		}
 	}
+
+
 	
 	
 	

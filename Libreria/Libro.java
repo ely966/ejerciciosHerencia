@@ -20,7 +20,6 @@ public class Libro {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.editorial = editorial;
-		this.fechaedicion = fechaedicion;
 		this.codigo = CODIGOSIG;
 		this.CODIGOSIG=CODIGOSIG+1;
 		
@@ -30,7 +29,6 @@ public class Libro {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
-		this.fechaedicion = fechaedicion;
 		this.codigo = CODIGOSIG;
 		this.CODIGOSIG=CODIGOSIG+1;
 		
@@ -41,10 +39,9 @@ public class Libro {
 		long dias = ChronoUnit.DAYS.between(fechaedicion, l3.fechaedicion);
 		if (dias < 0) {
 			dias= -(dias);
-			return (int) dias;
-		}else {
-			return (int) dias;
+			
 		}
+		return (int) dias;
 	}
 
 	
@@ -59,16 +56,21 @@ public class Libro {
 
 	public String calcularIsbn() {
 		//super();
+		
+		//primero quito todos lso espacios en blanco
+		//titulo.replace(" ", "");
+		//recoger los 3 primeros caracteres de titulo
+		titulo.substring(0, 3);
 		StringBuilder isbnnew= new StringBuilder();
-		//char caracter = titulo.charAt(0);
+	isbnnew.append(String.valueOf(titulo.replace(" ", "").substring(0, 3)));
+		isbnnew.append(String.valueOf(titulo.length()));
+		//añadir 3 ultimas caracter del autor y longitud
 		
-		for (int i=0; i < 3; i=i+1) {
-			char caracter = titulo.charAt(i);
-			isbnnew.append(String.valueOf(caracter));
-		}
+		isbnnew.append(String.valueOf(autor.substring(autor.replace(" ", "").length()-3, autor.replace(" ", "").length())));
 		isbnnew.append(String.valueOf(autor.length()));
-		
+	
 		isbn =isbnnew.toString();
+	
 		return isbn;
 	}
 
@@ -157,29 +159,6 @@ public class Libro {
 	}
 
 
-//	public String masCaro (double precio1, double precio2, double precio3, double precio4) {
-//		double mascaro = precio1;
-//		String resultado;
-//		if (mascaro < precio2 ) {
-//			mascaro = precio2;
-//		}else if (mascaro < precio3) {
-//			mascaro = precio3;
-//		}else if (mascaro < precio4) {
-//			mascaro= precio4;
-//		}
-//		if (mascaro == precio1) {
-//			resultado = "El primer libro es el mas caro";
-//		}
-//		else if (mascaro == precio2) {
-//			resultado = "El segundo libro es el mas caro";
-//		}else if (mascaro == precio3) {
-//			resultado = "El tercer libro es el mas caro";
-//		}
-//		else {
-//			resultado = "El cuarto libro es el mas caro";
-//		}
-//		return resultado;
-//	}
 
 
 

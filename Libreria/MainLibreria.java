@@ -9,29 +9,42 @@ public class MainLibreria {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//muestre informacion
+				//libro String titulo, String autor, String editorial, LocalDate fechaedicion
+				Libro l1= new Libro ("Las maravillas", "Pedro");
+				Libro l3= new Libro ("Las maravillas2", "Sandra");
+				//l1.calcularIsbn();
+						System.out.println(l1.calcularIsbn());
+						System.out.println(l3.calcularIsbn());
+				System.out.println(l1);
+				System.out.println(l3);
+			
+		
+		
+		
+		
+		
 		//Fisico.String titulo, String autor, String editorial, LocalDate fechaedicion, double peso,double precio
 		LibroFisico lf1 = new LibroFisico ("Harry Potter y la camasa de los secretos", "J.K. Rowling",2.0, 14.40);
 		LibroFisico lf2 = new LibroFisico ("Harry Potter y la piedra filosofal", "J.K. Rowling","Salamandra",2.0, 11.40);
+		
+		System.out.println(lf1.calcularIsbn());
+		System.out.println(lf2.calcularIsbn());
+		
 		System.out.println(lf1);
 		System.out.println(lf2);
-		//digital
-		//String titulo, String autor, String editorial, LocalDate fechaedicion, double precio,String formato
-		
-		//muestre informacion
-		//libro String titulo, String autor, String editorial, LocalDate fechaedicion
-		Libro l1= new Libro ("Las maravillas", "Pedro");
-		Libro l3= new Libro ("Las maravillas2", "Sandra");
-		System.out.println(l1);
 		
 		
-		
-		
+		//muestre informacion de los libros digitales
 		LibroDigital ld1 = new LibroDigital ("Las aventuras de nona", "Felipa Paredes", 12.50, "pdf");
+		LibroDigital ld2 = new LibroDigital ("Las aventuras de luna ", " Felipa Paredes ", 12.50, "dvd");
+		
+		System.out.println(ld1.calcularIsbn());
+		System.out.println(ld2.calcularIsbn());
 		
 		System.out.println(ld1);
-		
-		LibroDigital ld2 = new LibroDigital ("Las aventuras de luna", "Felipa Paredes", 12.50, "dvd");
-
+		System.out.println(ld2);
 
 		
 		try {
@@ -40,7 +53,7 @@ public class MainLibreria {
 			e.getMessage();
 		}
 	
-		//Introducir las fechas  las fechas
+		//Introducir las fechas 
 		LocalDate fecha= LocalDate.parse("2002-04-07");
 		l1.setFechaedicion(fecha);
 		LocalDate fechas= LocalDate.parse("2002-04-17");
@@ -51,16 +64,20 @@ public class MainLibreria {
 		System.out.println(l1.comprobarDias(l3));
 		
 //		
-		ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40);
-		System.out.println(ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40));
-		
-		System.out.println(ld2.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling",2.0, 11.40));
-		
-		
-		System.out.println(lf1.comprarprecio("Las aventuras de nona", "Felipa Paredes",12.50, "pdf"));
-		
+//		ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40);
+//		System.out.println(ld1.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling", 2.0, 14.40));
 //		
-
+//		System.out.println(ld2.comprarprecio("Harry Potter y la camasa de los secretos", "J.K. Rowling",2.0, 11.40));
+//		
+//		
+//		System.out.println(lf1.comprarprecio("Las aventuras de nona", "Felipa Paredes",12.50, "pdf"));
+//		
+//	
+		
+		//Comparar el precio de un libro digital y el de un libro fisico
+ 
+		System.out.println(ld1.compararprecio(lf1));
+		System.out.println(lf1.compararprecio(ld1));
 	
 		
 
