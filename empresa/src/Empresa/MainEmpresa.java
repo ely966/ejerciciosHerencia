@@ -30,12 +30,9 @@ public class MainEmpresa {
 		//String nombre, int edad, String nif, double precioPorHora, int numHoras
 		EmpleadoPorHoras eh1 = new EmpleadoPorHoras("Felipe", 34,"34216722X", 5.0,5);
 		System.out.println(eh1);
-		try {
-			System.out.println(eh1.calcularSaldo());
-		} catch (ExceptionFechaEmpleadosTempo e) {
-			// TODO Auto-generated catch block
-			e.getMessage();
-		}
-	}
+		
+		System.out.println(eh1.calcularSaldo());
+		
+	
 
-}
+}}

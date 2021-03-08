@@ -10,15 +10,15 @@ public class EmpleadoPorHoras extends Empleado{
 		this.precioPorHora = precioPorHora;
 		this.numHoras = numHoras;
 	}
-
-	private double calcularSueldo() {
+	@Override
+	public double calcularSaldo() {
 		double sueldo = precioPorHora * numHoras;
 		return sueldo;
 	}
 
 	@Override
 	public String toString() {
-		return "EmpleadoPorHoras [precioPorHora=" + precioPorHora + ", numHoras=" + numHoras + "]";
+		return "EmpleadoPorHoras.Nombre: " + getNombre() + " edad : " + getEdad() + " nif  :" + getNif() + " precioPorHora=" + precioPorHora + ", numHoras=" + numHoras ;
 	}
 	
 	

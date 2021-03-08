@@ -34,7 +34,7 @@ import java.time.LocalDate;
 
 	@Override
 	public String toString() {
-		return "EmpleadoFijo [fechaAlta=" + fechaAlta + "]";
+		return "EmpleadoFijo. Nombre: " + getNombre() + " edad : " + getEdad() + " nif  : " + getNif() +  " fechaAlta=" + fechaAlta ;
 	}
 	
 	
