@@ -15,7 +15,7 @@ public class LibroDigital extends Libro {
 		this.precio = precio;
 		
 		this.formato = formato;
-		if (formato.equals ("epub")|| formato.equals ("pdf") || formato.equals ("mobi")) {}
+		if (!formato.equals ("epub") && !formato.equals ("pdf") && !formato.equals ("mobi")) {}
 		else {throw  new Excepcionformatodigital("Formato no valido"); }	
 
 		
