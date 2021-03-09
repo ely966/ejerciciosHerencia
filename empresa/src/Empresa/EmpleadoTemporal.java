@@ -10,10 +10,12 @@ public class  EmpleadoTemporal extends Empleado{
 
 
 	public EmpleadoTemporal(String nombre, int edad, String nif, double sueldo, LocalDate fechaAlta,
-			LocalDate fechaBaja) {
+			LocalDate fechaBaja) throws ExceptionFechaEmpleadosTempo {
 		super(nombre, edad, nif, sueldo);
 		this.fechaAlta = fechaAlta;
 		this.fechaBaja = fechaBaja;
+		if (fechaBaja.isBefore(fechaAlta))throw new ExceptionFechaEmpleadosTempo("Fecha de alta debe ser antes que la fecha de baja");
+		
 	}
 
 
