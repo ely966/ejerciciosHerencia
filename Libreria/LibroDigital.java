@@ -15,15 +15,18 @@ public class LibroDigital extends Libro {
 		this.precio = precio;
 		
 		this.formato = formato;
-		if (formato.equals ("epub")) throw  new Excepcionformatodigital("Formato no valido");	
+		if (formato.equals ("epub")|| formato.equals ("pdf") || formato.equals ("mobi")) {}
+		else {throw  new Excepcionformatodigital("Formato no valido"); }	
 
 		
 	}
 	public LibroDigital(String titulo, String autor, double precio,
-			String formato) {
+			String formato)throws Excepcionformatodigital {
 		super(titulo, autor);
 		this.precio = precio;
 		this.formato = formato;
+		if (formato.equals ("epub")|| formato.equals ("pdf") || formato.equals ("mobi")) {}
+		else {throw  new Excepcionformatodigital("Formato no valido"); }	
 	}
 	//throws Excepcionformatodigital
 

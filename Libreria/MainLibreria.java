@@ -37,21 +37,39 @@ public class MainLibreria {
 		
 		
 		//muestre informacion de los libros digitales
-		LibroDigital ld1 = new LibroDigital ("Las aventuras de nona", "Felipa Paredes", 12.50, "pdf");
-		LibroDigital ld2 = new LibroDigital ("Las aventuras de luna ", " Felipa Paredes ", 12.50, "dvd");
+		LibroDigital ld1;
+		try {
+			ld1 = new LibroDigital ("Las aventuras de nona", "Felipa Paredes", 12.50, "pdf");
+			System.out.println(ld1.calcularIsbn());
+			System.out.println(ld1);
+			
+			
+			System.out.println(ld1.compararprecio(lf1));
+			System.out.println(lf1.compararprecio(ld1));
+		} catch (Excepcionformatodigital e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	
+		LibroDigital ld2;
+		try {
+			ld2 = new LibroDigital ("Las aventuras de luna ", " Felipa Paredes ", 12.50, "pdf");
+			System.out.println(ld2.calcularIsbn());
+			System.out.println(ld2);
+			
+		} catch (Excepcionformatodigital e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
-		System.out.println(ld1.calcularIsbn());
-		System.out.println(ld2.calcularIsbn());
 		
-		System.out.println(ld1);
-		System.out.println(ld2);
+		
+		
+		//System.out.println(ld1);
+		//System.out.println(ld2);
 
 		
-		try {
-			System.out.println(ld2.comprobar());
-		}catch (Excepcionformatodigital e) {
-			e.getMessage();
-		}
+		
 	
 		//Introducir las fechas 
 		LocalDate fecha= LocalDate.parse("2002-04-07");
@@ -76,8 +94,7 @@ public class MainLibreria {
 		
 		//Comparar el precio de un libro digital y el de un libro fisico
  
-		System.out.println(ld1.compararprecio(lf1));
-		System.out.println(lf1.compararprecio(ld1));
+		
 	
 		
 
@@ -89,12 +106,20 @@ public class MainLibreria {
 				LibroFisico lf4 = new LibroFisico ("Las nubes", "Maria Dolores",2.0, 11.40);
 				LibroFisico lf5 = new LibroFisico ("Las nubes 2", "Maria Dolores","Salamandra",2.0, 11.80);
 		//Dos libros digitales
-				LibroDigital ld3 = new LibroDigital ("Las aventuras de luna", "Felipa Paredes", 12.50, "dvd");
-				LibroDigital ld4 = new LibroDigital ("Las aventuras de nona", "Felipa Paredes",12.53, "pdf");
+				LibroDigital ld3;
+				try {
+					ld3 = new LibroDigital ("Las aventuras de luna", "Felipa Paredes", 12.50, "pdf");
+					LibroDigital ld4 = new LibroDigital ("Las aventuras de nona", "Felipa Paredes",12.53, "pdf");
+					Libro l2 = new Libro();
+					System.out.println(l2.masCaro(lf4,lf5,ld3, ld4));
+					
+				} catch (Excepcionformatodigital e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 	
 				
-		Libro l2 = new Libro();
-		System.out.println(l2.masCaro(lf4,lf5,ld3, ld4));
 		
 	}
 
