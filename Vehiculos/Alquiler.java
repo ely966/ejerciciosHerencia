@@ -1,5 +1,5 @@
 package Vehiculos;
-
+import Vehiculos.MainVehiculos;
 public class Alquiler {
 	private static double preciodiagBaja= 30.0;
 	private static double preciodiaMedia = 40.0;
@@ -10,6 +10,7 @@ public class Alquiler {
 	private static double precioPorPlazas = 5.00;
 	private static double preciofurgo= 0.5;
 	private Vehiculo automovil;
+	
 	public Alquiler(int diasalquiler,Vehiculo automovil) {
 		super();
 		this.diasalquiler = diasalquiler;
@@ -18,11 +19,27 @@ public class Alquiler {
 	}
 	
 	
+	
+	public Alquiler(int diasalquiler) {
+		super();
+		this.diasalquiler = diasalquiler;
+	}
+
+
+
 	public double calcularPrecioAlquiler (String matricula, int dia ) {
-		
+	
 		double alquiler = 0;
-		if (Vehiculo.gama.equals ("baja")) {}else if (tpo.equals ("media")) {}
-		
+		vehiculos[0];
+//		if (automovil.gama.equals ("baja")) {
+//			alquiler = 30 * dia;
+//			
+//		}else if (automovil.equals ("media")) {
+//			alquiler = 40 * dia;
+//		}else if (automovil.gama.equals ("baja")) {
+//			alquiler = 50 * dia;
+//		}
+		return alquiler;
 	}
 	
 	

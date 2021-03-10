@@ -11,9 +11,11 @@ public class MainVehiculos {
 		
 		String matricula;
 		String gama;
+		Vehiculo[] vehiculos = new Vehiculo[200];
+		Alquiler[] alquileres = new Alquiler[200];
 		
 		String opc= "0";
-		
+		int i =0;
 		while (!opc.equals("3")) {
 			System.out.println("1. Alta de vehiculo ");
 			System.out.println("2. Calculo de precio de alquiler");
@@ -41,11 +43,19 @@ public class MainVehiculos {
 					try {
 						Coche c1= new Coche (matricula,gama,tipocombus);
 						System.out.println(c1);
+						vehiculos[i]=c1;
+						
+						
 					} catch (ExcepcionGama e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					break;
+					
+					
+					
+					
+					
 				case "microbus" :
 					
 					System.out.println("Introduce los datos del vehiculo que desea introducir");
@@ -60,12 +70,18 @@ public class MainVehiculos {
 					
 					try {
 						Microbus m1 = new Microbus (matricula, gama, numplazas);
+						vehiculos[i]=m1;
+						
+						
 					} catch (ExcepcionGama e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+						
 					}
 					System.out.println("");
 					break;
+					
+					
 					
 				case "furgoneta":
 					System.out.println("Introduce los datos del vehiculo que desea introducir");
@@ -81,6 +97,8 @@ public class MainVehiculos {
 					
 					try {
 						Furgonetas f1= new Furgonetas (matricula,gama,pesomax);
+						vehiculos[i]=f1;
+						
 					} catch (ExcepcionGama e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -89,14 +107,59 @@ public class MainVehiculos {
 					
 					
 					break;
+					
+				
 				}
+				
 				break;
 			case "2" :
+				System.out.println(vehiculos[0]);
+				System.out.println(vehiculos[1]);
 				
+				System.out.println("Introduce la Matricula");
+				matricula= teclado.nextLine();
+				System.out.println("Introduce numero dias que etsara alquilado el coche");
+				int dias= Integer.parseInt(teclado.nextLine());
+				
+				Alquiler a1= new Alquiler(dias);
+				a1.calcularPrecioAlquiler(matricula,dias);
+				
+				
+				int a=0;
+				
+				while (!(vehiculos[a].getMatricula()).equals(matricula)) {
+					a=a+1;
+				}
+				double alquiler=0;
+				if ((vehiculos[a].gama).equals ("baja")) {
+					alquiler = 30 * dias;
+					
+				}else if ((vehiculos[a].gama).equals ("media")) {
+					alquiler = 40 * dias;
+				}else if ((vehiculos[a].gama).equals ("alta")) {
+					alquiler = 50 * dias;
+				}
+				
+				System.out.println("¿Que tipo de vehiculo quieres dar de alta ? ");
+				tipo= teclado.nextLine();
+				Vehiculo co = vehiculos[a];
+				if (tipo.equals ("coche")) {
+					
+					 co.CalcularPrecioextra ( dias);
+					alquiler = alquiler + 30 * dias;
+					
+				}else if (tipo.equals ("furgoneta")) {
+					alquiler = 40 * dias;
+				}else if ((vehiculos[a].gama).equals ("alta")) {
+					alquiler = 50 * dias;
+				}
+				
+					
 				break;
 			case "3": 
 				break;
 			}
+			i=i+1; //contar en el array u guardar el siguiente 
 		}
 		
 		
