@@ -3,7 +3,9 @@ package Vehiculos;
 public abstract class Vehiculo {
 	private String matricula;
 	protected String gama;
-	
+	private static double preciodiagBaja= 30.0;
+	private static double preciodiaMedia = 40.0;
+	private static double preciodiaAlta = 50.0;
 	
 	
 	public Vehiculo(String matricula, String gama) throws ExcepcionGama{
@@ -31,9 +33,18 @@ public abstract class Vehiculo {
 	}
 
 
-//	public CalcularPrecioextra {
-//		
-//	}
+	public double CalcularPrecio( int dia) {
+		double alquiler=0;
+		if (gama.equals ("baja")) {
+			alquiler = preciodiagBaja * dia;
+			
+		}else if (gama.equals ("media")) {
+			alquiler = preciodiaMedia * dia;
+		}else if (gama.equals ("baja")) {
+			alquiler = preciodiaAlta * dia;
+		}
+		return alquiler;
+	}
 
 
 
@@ -61,6 +72,11 @@ public abstract class Vehiculo {
 			return false;
 		return true;
 	}
+
+
+
+
+
 
 
 

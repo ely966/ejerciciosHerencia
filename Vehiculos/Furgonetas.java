@@ -2,6 +2,7 @@ package Vehiculos;
 
 public class Furgonetas extends Vehiculo {
 	private double pesoQueSoporta;
+	private static final double  preciofurgo= 0.5;
 
 	public Furgonetas(String matricula, String gama, double pesoQueSoporta) throws ExcepcionGama {
 		super(matricula, gama);
@@ -9,10 +10,10 @@ public class Furgonetas extends Vehiculo {
 	}
 	
 	
-	
-	public double CalcularPrecioextra (int dias) {
+	@Override
+	public double CalcularPrecio( int dia) {
 		double precio = 0;
-		precio = 0.5 * pesoQueSoporta;
+		precio = preciofurgo * pesoQueSoporta;
 		return precio;
 		
 	}

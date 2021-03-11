@@ -2,7 +2,10 @@ package Vehiculos;
 
 public class Coche extends Vehiculo{
 	private String tipocombustible;
-
+	private static double pagoPorGasolina = 3.50;
+	private static double pagoPorDiesel = 2.00;
+	
+	
 	public Coche(String matricula, String gama, String tipocombustible) throws ExcepcionGama {
 		super(matricula, gama);
 		this.tipocombustible = tipocombustible;
@@ -12,7 +15,7 @@ public class Coche extends Vehiculo{
 		return tipocombustible;
 	}
 	
-	public double CalcularPrecioextra (int dias){
+	public double CalcularPrecio (int dias){
 		double precio = 0;
 		if (tipocombustible.equals ("diesel") || tipocombustible.equals("Diesel")) {
 			

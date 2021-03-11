@@ -110,19 +110,19 @@ public class MainVehiculos {
 					
 				
 				}
-				
-				break;
-			case "2" :
 				System.out.println(vehiculos[0]);
 				System.out.println(vehiculos[1]);
+				break;
+			case "2" :
+				
 				
 				System.out.println("Introduce la Matricula");
 				matricula= teclado.nextLine();
 				System.out.println("Introduce numero dias que etsara alquilado el coche");
 				int dias= Integer.parseInt(teclado.nextLine());
 				
-				Alquiler a1= new Alquiler(dias);
-				a1.calcularPrecioAlquiler(matricula,dias);
+				
+				//a1.calcularPrecioAlquiler(matricula,dias);
 				
 				
 				int a=0;
@@ -130,30 +130,8 @@ public class MainVehiculos {
 				while (!(vehiculos[a].getMatricula()).equals(matricula)) {
 					a=a+1;
 				}
-				double alquiler=0;
-				if ((vehiculos[a].gama).equals ("baja")) {
-					alquiler = 30 * dias;
-					
-				}else if ((vehiculos[a].gama).equals ("media")) {
-					alquiler = 40 * dias;
-				}else if ((vehiculos[a].gama).equals ("alta")) {
-					alquiler = 50 * dias;
-				}
-				
-				System.out.println("¿Que tipo de vehiculo quieres dar de alta ? ");
-				tipo= teclado.nextLine();
-				Vehiculo co = vehiculos[a];
-				if (tipo.equals ("coche")) {
-					
-					 co.CalcularPrecioextra ( dias);
-					alquiler = alquiler + 30 * dias;
-					
-				}else if (tipo.equals ("furgoneta")) {
-					alquiler = 40 * dias;
-				}else if ((vehiculos[a].gama).equals ("alta")) {
-					alquiler = 50 * dias;
-				}
-				
+				Alquiler a1= new Alquiler(dias, vehiculos[a]);
+				System.out.println(a1);
 					
 				break;
 			case "3": 

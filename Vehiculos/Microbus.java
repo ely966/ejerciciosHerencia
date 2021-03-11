@@ -2,17 +2,21 @@ package Vehiculos;
 
 public class Microbus extends Vehiculo{
 	private int numplazas;
+	private static int precioPorPlazas = 5;
 
 	public Microbus(String matricula, String gama, int numplazas) throws ExcepcionGama {
 		super(matricula, gama);
 		this.numplazas = numplazas;
+		
 	}
 	
-	public double CalcularPrecioextra (int dias) {
+	
+	@Override
+	public double CalcularPrecio( int dia) {
 		
 	double precio = 0;
 	
-	precio = 5*numplazas;
+	precio = precioPorPlazas *numplazas;
 	return precio;
 	}
 	
