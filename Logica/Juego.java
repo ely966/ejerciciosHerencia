@@ -1,6 +1,6 @@
 package Logica;
 
-import javax.swing.Spring;
+
 
 import Elementos.Elemento;
 import Elementos.Jugador;
@@ -43,17 +43,24 @@ public void proximoJugador() {
 		
 	}
 	
-public void  moverJugador(char direc) {
+public String  moverJugador(char direc, Jugador jugad) {
+	String mov = null ;
 	
 	if (direc == 'N') {
-		Elementos.Jugador.nextCol('n');
+		jugad.nextCol('n');
+		mov="Se ha movido al norte";
 	}else if (direc == 'S') {
-		Elementos.Jugador.nextCol('s');
+		jugad.nextCol('s');
+		mov="Se ha movido al sur";
 	}else if (direc == 'E') {
-		Elementos.Jugador.nextFil('e');
+		jugad.nextFil('e');
+		mov="Se ha movido al este";
 	}else if (direc == 'O') {
-		Elementos.Jugador.nextFil('0');
+		jugad.nextFil('0');
+		mov="Se ha movido al oeste";
 	
-}}	
+}
+	return mov;//debo poner el resultado del movimiento pero si se encentra con otro jugador debe ser lucha
+	}	
 	
 }
